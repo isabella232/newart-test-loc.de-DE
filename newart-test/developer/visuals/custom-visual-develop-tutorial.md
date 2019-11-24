@@ -16,9 +16,9 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72424480"
 ---
-# <a name="tutorial-developing-a-power-bi-visual"></a>Tutorial: Entwickeln eines Power BI-Visuals
+# <a name="tutorial-developing-a-power-bi-visual"></a>Tutorial: Entwickeln einer Power BI Visualisierung
 
-Wir machen es für Entwickler einfach, ihre Power BI-Visuals in Power BI hinzuzufügen, um diese in Dashboards und Berichten zu verwenden. Wir haben den Code für alle unsere Visualisierungen auf GitHub veröffentlicht, um Ihnen den Einstieg zu erleichtern.
+Wir machen es für Entwickler einfach, ihre Power BI-Visuals in Power BI hinzuzufügen, um diese in Dashboards und Berichten zu verwenden. Um Ihnen den Einstieg zu erleichtern, haben wir den Code für alle unsere Visualisierungen in GitHub veröffentlicht.
 
 Zusammen mit dem Visualisierungsframework haben wir unsere Testsammlung und Tools bereitgestellt, damit die Community qualitativ hochwertige Power BI-Visuals für Power BI erstellen kann.
 
@@ -89,7 +89,7 @@ Jetzt müssen Sie das **pbiviz**-Paket installieren.
 
 3. Wählen Sie im Schritt **Zu importierende Datei** *Weiter* aus.
 
-4. Fügen Sie im Schritt **Privater Schlüsselschutz** im Feld „Passwort“ die Passphrase ein, die Sie beim Erstellen des Zertifikats erhalten haben.  In diesem Fall wieder **_15105661266553327_** .
+4. Fügen Sie die Passphrase, die Sie beim Erstellen des Zertifikats erhalten haben, **in das Feld** Kennwort ein, und fügen Sie Sie in das Feld Kennwort ein.  Auch in diesem Fall ist es **_15105661266553327_** .
 
       ![Passphrase kopieren](media/custom-visual-develop-tutorial/cert-install-wizard-show-passphrase.png)
 
@@ -313,7 +313,7 @@ Jetzt können Sie das benutzerdefinierte Visual so entwickeln, dass ein Kreis mi
 
     Mit diesem Befehl werden TypeScript-Definitionen auf der Grundlage von JavaScript-Dateien installiert, sodass Sie das benutzerdefinierte Visual in TypeScript (das eine Obermenge von JavaScript ist) entwickeln können. Visual Studio Code ist die ideale IDE zum Entwickeln von TypeScript-Anwendungen.
 
-3. Geben Sie den folgenden Befehl ein, um die **core-js @ no__t-1 in PowerShell zu installieren.
+3. Geben Sie zum Installieren von **core-js** in PowerShell den folgenden Befehl ein.
 
     ```powershell
     npm i core-js@3.2.1 --save
@@ -338,9 +338,9 @@ Jetzt können Sie das benutzerdefinierte Visual so entwickeln, dass ein Kreis mi
     PS C:\circlecard>
     ```
 
-    Mit diesem Befehl wird die modulare Standardbibliothek für JavaScript installiert. Sie enthält polyfills für ECMAScript bis zu 2019. Weitere Informationen [`core-js`](https://www.npmjs.com/package/core-js)
+    Mit diesem Befehl wird die modulare Standardbibliothek für JavaScript installiert. Sie enthält Polyfills für ECMAScript bis 2019. Weitere Informationen zu [`core-js`](https://www.npmjs.com/package/core-js)
 
-4. Geben Sie den folgenden Befehl ein, um die **powerbi-Visual-API @ no__t-1 in PowerShell zu installieren.
+4. Geben Sie zum Installieren der **powerbi-visual-api** in PowerShell den folgenden Befehl ein.
 
     ```powershell
     npm i powerbi-visuals-api --save-dev
@@ -356,7 +356,7 @@ Jetzt können Sie das benutzerdefinierte Visual so entwickeln, dass ein Kreis mi
     PS C:\circlecard>
     ```
 
-    Mit diesem Befehl werden Power BI visuellen API-Definitionen installiert.
+    Mit diesem Befehl werden API-Definitionen für Power BI-Visuals installiert.
 
 5. Starten Sie [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -370,7 +370,7 @@ Jetzt können Sie das benutzerdefinierte Visual so entwickeln, dass ein Kreis mi
 
     ![D3-Bibliothek in Visual Studio Code](media/custom-visual-develop-tutorial/d3-library.png)
 
-7. Stellen Sie sicher, dass die Datei **index. d. TS @ no__t-1 hinzugefügt wurde, indem Sie node_modules > @types > D3 im Bereich **eXplorer @ no__t-4 erweitern.
+7. Stellen Sie sicher, dass die Datei **index.d.ts** hinzugefügt wurde, indem Sie node_modules > @types > d3 im **Explorer-Bereich** erweitern.
 
     ![Index.d.ts-Datei](media/custom-visual-develop-tutorial/index-d-ts.png)
 
@@ -531,7 +531,7 @@ Jetzt können wir uns ansehen, wie wir das benutzerdefinierte Visual entwickeln 
 
 6. Führen Sie das Visual weiter aus.
 
-## <a name="process-data-in-the-visual-code"></a>Verarbeiten von Daten im visuellen Code
+## <a name="process-data-in-the-visual-code"></a>Verarbeiten von Daten im Visual-Code
 
 Definieren Sie die Datenrollen und Datenansichtsmappings, und ändern Sie dann die Logik des benutzerdefinierten Visuals, um den Wert und den Anzeigenamen einer Kennzahl anzuzeigen.
 
@@ -597,17 +597,17 @@ Definieren Sie die Datenrollen und Datenansichtsmappings, und ändern Sie dann d
 
     ![Zurückkehren](media/custom-visual-develop-tutorial/show-dataview-toolbar-revert.png)
 
-### <a name="consume-data-in-the-visual-code"></a>Verwenden von Daten im visuellen Code
+### <a name="consume-data-in-the-visual-code"></a>Nutzen von Daten im Visual-Code
 
-1. In **visual Studio Code @ no__t-1 in der Datei "**visual. TS @ no__t-3"
+1. Importieren Sie in **Visual Studio Code** in der Datei **visual.ts**
 
-    Importieren der `DataView`-Schnittstelle aus `powerbi`-Modul
+    die `DataView`-Schnittstelle aus dem `powerbi`-Modul,
 
     ```typescript
     import DataView = powerbi.DataView;
     ```
 
-    Fügen Sie die folgende Anweisung als erste Anweisung der Update-Methode hinzu.
+    und fügen Sie die folgende Anweisung als erste Anweisung der Update-Methode hinzu.
 
     ```typescript
     let dataView: DataView = options.dataViews[0];

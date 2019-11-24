@@ -16,7 +16,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72424395"
 ---
-# <a name="tutorial-adding-formatting-options-to-a-power-bi-visual"></a>Tutorial: Hinzufügen von Formatierungsoptionen zu einem Power BI-Visual
+# <a name="tutorial-adding-formatting-options-to-a-power-bi-visual"></a>Tutorial: Hinzufügen von Formatierungsoptionen zu einem Power BI visuellen Element
 
 Dieses Tutorial erläutert die genaue Vorgehensweise beim Hinzufügen allgemeiner Eigenschaften zu einem Visual.
 
@@ -121,15 +121,15 @@ Sie können benutzerdefinierte Eigenschaften hinzufügen, um die Farbe des Kreis
 
 7. Öffnen Sie die Datei **visual.ts**.
 
-8. In der Datei "**visual. TS @ no__t-1"
+8. Importieren Sie in der Datei **visual.ts**
 
-    Import `VisualSettings`-Klasse
+    die `VisualSettings`-Klasse,
 
     ```typescript
     import { VisualSettings } from "./settings";
     ```
 
-    Fügen Sie in der **visual @ no__t-1-Klasse die folgende Eigenschaft hinzu:
+    und fügen Sie in der Klasse **Visual** die folgende Eigenschaft hinzu:
 
     ```typescript
     private visualSettings: VisualSettings;
